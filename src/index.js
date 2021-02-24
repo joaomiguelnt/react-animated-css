@@ -104,7 +104,7 @@ export class Animated extends React.Component {
     const { isVisible: nextIsVisible } = nextProps
     const { isVisible: prevIsVisible } = prevState
     if (nextIsVisible !== prevIsVisible) {
-      return this.getNewState({...prevState, ...nextProps});
+      return Animated.getNewState({...prevState, ...nextProps});
     }
     return {}
   }
@@ -171,10 +171,8 @@ Animated.propTypes = {
 };
 
 Animated.defaultProps = {
-  animateOnMount: true,
+  animateOnMount: false,
   isVisible: true,
-  animationIn: "fadeIn",
-  animationOut: "fadeOut",
   animationInDelay: 0,
   animationOutDelay: 0,
   animationInDuration: 1000,
